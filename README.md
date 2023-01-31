@@ -1,1 +1,1 @@
-the manual for RStudio Server from a user's perspective
+Tallinna Ülikooli elektromagnetismi praktikumi kursuse peacecop kalmeri: raport

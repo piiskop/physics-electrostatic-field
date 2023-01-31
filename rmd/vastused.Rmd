@@ -1,0 +1,61 @@
+# Vastused küsimustele
+
+## Küsimus 1
+
+### Küsimuse sisu
+
+Mismärgilise laenguga määratakse jõujoonte suunda?
+
+### Vastus
+
+Jõujoonte suund on positiivse laengu liigutamise suund elektrivälja poolt.
+
+## Küsimus 2
+
+### Küsimuse sisu
+
+Kuidas muutub elektrivälja tugevus laengute vahekauguse vähendamisel?
+
+### Vastus
+
+Kui elektriliste potentsiaalide erinevus jätta samaks, siis vahekauguse vähendamisel elektriväli tugevneb. Kui elektriliste potentsiaalide erinevus ka muutub, siis otsest seost vahekauguse muutmise ja elektrivälja tugevuse vahel ei ole.
+
+## Küsimus 3
+
+### Küsimuse sisu
+
+Mis juhtub, kui väljatugevus kasvab väga suureks?
+
+### Vastus
+
+Kui väljatugevus kasvab väga suureks, siis liigub vool hästi kiiresti ja võib tekkida lühis.
+
+## Küsimus 4
+
+### Küsimuse sisu
+
+Kuidas mõjutab katse tulemust sondi või elektroodide kõrvalekalle vertikaalasendist?
+
+### Vastus
+
+Kui elektroodid on mõlemad vertikaalselt otse, siis kujuneksid samapinge jooned sümmeetrilised. Kui üks elektrood on viltu, ei pruugi samapinge jooned sümmeetrilised olla.
+
+## Küsimus 5
+
+### Küsimuse sisu
+
+Millises suunas liigub elektriväljas elektron?
+
+### Vastus
+
+Elektron liigub elektriväljas elektrivälja tugevusele vastupidises suunas.
+
+## Küsimus 6
+
+### Küsimuse sisu
+
+Milles väljendub elektrostaatilise välja konservatiivsus?
+
+### Vastus
+
+Elektrostaatilise välja konservatiivsus tähendab, et ei ole oluline, millist trajektoori mööda laeng liigub, kui liikumise alg- ja lõpppunkt on fikseeritud.

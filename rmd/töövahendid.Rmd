@@ -1,0 +1,33 @@
+# Töövahendid
+
+1. Veevann.
+
+2. Elektroodid (vask, tsink).
+
+3. Voltmeeter (*TL-4M2*, joonised \@ref(fig:voltmeter-front): `r render_pageref(reference = "fig:voltmeter-front")` ja \@ref(fig:voltmeter-rear): `r render_pageref(reference = "fig:voltmeter-rear")`).
+
+    ```{r label = "voltmeter-front", echo=FALSE, fig.cap = "Voltmeeter *ТЛ-4М2* eestvaates."}
+    include_external_graphics("rmd/voltmeeter.png")
+
+    ```
+
+    ```{r label = "voltmeter-rear", echo=FALSE, fig.cap = "Voltmeeter *ТЛ-4М2* tagantvaates."}
+    include_external_graphics("rmd/voltmeeter-tagantvaates.png")
+
+    ```
+
+4.  Toiteallikas (*PS1502A*, joonised \@ref(fig:PS1502A-front): `r render_pageref(reference = "fig:PS1502A-front")` ja \@ref(fig:PS1502A-rear): `r render_pageref(reference = "fig:PS1502A-rear")`).
+
+    ```{r label = "PS1502A-front", echo=FALSE, fig.cap = "Toiteallikas *PS1502A* eestvaates."}
+    include_external_graphics("rmd/ps1502a.png")
+
+    ```
+
+    ```{r label = "PS1502A-rear", echo=FALSE, fig.cap = "Toiteallikas *PS1502A* tagantvaates."}
+    include_external_graphics("rmd/toiteallikas-tagantvaates.png")
+
+    ```
+
+5. Mõõtesond.
+
+6. Ühendusjuhtmed.

@@ -1,0 +1,169 @@
+# Töö käik
+
+Töö osad:
+
+1. Täitsin nõu $\qtyrange{4}{5}{\cm}$ ulatuses veega.
+
+2. Paigutasin nõu koordinaatvõrgustikule.
+
+3. Võtsin muu samasuguse koordinaatvõrgustikuga lehe katseprotokolliks.
+
+4. Kinnitasin anoodi vertikaalselt veenõu serva külge.
+
+5. Märkisin anoodi asukoha.
+
+6. Kinnitasin katoodi vertikaalselt veenõu serva külge.
+
+7. Märkisin katoodi asukoha.
+
+8. Ühendasin anoodi toiteallika plussklemmiga.
+
+9. Ühendasin katoodi toiteallika miinusklemmiga.
+
+10. Katoodi külge ühendasin voltmeetri miinusklemmi.
+
+11. Sättisin voltmeetri voolutüübiks alalisvoolu.
+
+12. Sättisin voltmeetri mõõtepiirkonnaks $\qty{10}{\V}$.
+
+13. Voltmeetri plussklemmi ühendasin mõõtesondiga.
+
+14. Ühendasin toiteallika vooluvõrku.
+
+15. Puudutades sondiga katoodi, nii et see ei puutuks kokku veega, reguleerisin toietallika pinge vastavalt voltmeetri näidule $\qty{10}{\V}$ peale.
+
+16. Toetasin sondi vertikaalselt nõu keskel nõu põhjale nihutades sondi, kuni voltmeetri näit oli $\qty{5}{\V}$. Lugedes nõu põhja all olevalt koordinaatvõrgustikult sondi asukoha kandsin selle tulemi katseprotokolli koordinaatlehele.
+
+17. Kordasin eelmise sammu tegevust muudes sondi asukohtades sama pinge korral.
+
+18. Moodustasin sammudes 16 ja 17 märgitud sondi asukohtadest $\qty{5}{\V}$ ekvipotentsiaaljoone.
+
+19. Kordasin sammude 16-18 tegevusi, nii et pinge oli $\qty{5}{\V}$ asemel täisarvuliselt $\qtyrange{1}{9}{\V}$.
+
+20. Kordasin sammude 16-18 tegevusi, nii et pinge oli $\qty{5}{\V}$ asemel $\qtyrange{2,5}{7,5}{\V}$ sammuga $\qty{0,5}{\V}$. Joonisel \@ref(fig:positions-of-screwdriver): `r render_pageref(reference = "fig:positions-of-screwdriver")` on vasakul keskel vooluallikas, mille mustast august ehk katoodist on ühendatud must juhe sinise klambriga kinnitatud elektroodi külge ja valge juhe voltmeetri katoodi külge. Voltmeetri katood on ühendatud kruvikeerajast sondiga. Toiteallika punasest august ehk anoodist on ühendatud juhe kollase klambriga kinnitatud elektroodiga. Kumbki elektrood on vees ja vesi ühendab neid kausis. Kollase klambriga elektrood on veidi viltu, kuigi pidanuks olema otse. Kausi all on koordinaatvõrgustik ja samasugune koordinaatvõrgustik on kausi kõrval. Kausi kõrval olevale võrgustikule märkisin sondiga mõõdetud punktid. Näha on, et olen jätnud märkimata anoodi asukoha, kuid selle saab jooniselt hõlpsasti välja lugeda. Toiteallika pinge oli mõõtmiste kestel algselt voltmeetri järgi reguleeritult veidi alla $\qty{10}{\V}$.
+
+    ```{r label = "positions-of-screwdriver", echo=FALSE, fig.cap = "Olustik töölaual vahetult pärast mõõtmisi ja märkimisi. ", out.extra = "angle=90", out.height = "\\textwidth"}
+    include_external_graphics("rmd/sondi-asukohad.png")
+
+    ```
+
+    ```{r}
+    V_5_V_x <- c(14, 13.7, 13.6, 13.1, 13.4, 13.3, 13.7, 13.5, 13.9, 13.6, 14, 14, 14.1, 14.5, 15, 14.8, 15.1, 15.1, 15.4, 16.4, 15.7, 16.6, 17, 17.7, 18.7)
+    V_5_V_y <- c(.3, 1.8, 2.7, 3.6, 5, 5.9, 7, 8.5, 9.6, 10, 10.8, 11.8, 12.5, 13.5, 13.6, 14.3, 14.7, 15, 15.9, 16.6, 17, 18.2, 18.7, 19.4, 20.5)
+    V_5_V <- data.frame(x = V_5_V_x, y = V_5_V_y)
+    librarian::shelf(c(
+      "ggplot2",
+      "latex2exp",
+      "ggalt"
+    ))
+# 
+#     spline_int <- as.data.frame(spline(V_5_V$V_5_V_x, V_5_V$V_5_V_y))
+# 
+#     ggplot(data = V_5_V, aes(x = V_5_V_x, y = V_5_V_y)) +
+#       geom_point(shape = 23, color = "#008000", fill = "#ff6600", size = 3) +
+#       geom_path() +
+#       geom_line(data = spline_int) +
+#       labs(x = "Pinge", y = TeX("$\\frac{Pinge}{V}$"))
+
+
+    ```
+
+
+21. Ühendasin vooluringi lahti.
+
+22. Korrastasin töökoha.
+
+23. Joonistasin viis jõujoont (joonis \@ref(fig:lines): `r render_pageref(reference = "fig:lines")`).
+
+    ```{r label = "lines", echo=FALSE, fig.cap = "Musta värvi jooned on samapotentsiaali jooned. Rohelised jooned on elektrivälja tugevuse jooned. Arvud on elektripotentsiaal voltides."}
+    include_external_graphics("rmd/jooned.png")
+
+    ```
+
+24. Lasen arvutada elektroode ühendaval joonel minimaalse väljatugevuse kasutades valemit \@ref(eq:electric-field-strength-through-U) leheküljel `r render_pageref(reference = "eq:electric-field-strength-through-U")`:
+
+    ```{r label = "E_min"}
+    librarian::shelf(c(
+      "dplyr"
+    ))
+    
+    V_2 <- c(0, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7)
+    V_1 <- lag(V_2)
+    
+    s <- c(0, .3, 1, 2.2, 3, 4.5, 6, 7.7, 9.2, 10.6, 12.2, 13.6, 14.9, 15.8)
+    delta_s <- s - lag(s)
+    
+    E <- calculate_electric_field_strength_through_U(V_2 = V_2, V_1 = V_1, s = delta_s)
+    E_min <- min(E, na.rm = TRUE)
+    
+    ```
+    
+    Minimaalne väljatugevus elektroode ühendaval joonel oli \qty{`r as.character(signif(E_min, digits = 3)) `}{\V\per\m}.
+
+25. Lasen arvutada elektroode ühendaval joonel maksimaalse väljatugevuse:
+
+    ```{r label = "E_max"}
+    E_max <- max(E, na.rm = TRUE)
+    
+    ```
+    
+    Maksimaalne väljatugevus elektroode ühendaval joonel oli \qty{`r as.character(signif(E_max, digits = 3)) `}{\V\per\m}.
+
+26. Lasen arvutada minimaalse elektrivälja tugevusega punktis paiknevale elektronile mõjuva jõu kasutades vastavat valemit \@ref(eq:force-through-electric-field-strength) leheküljel `r render_pageref(reference = "eq:force-through-electric-field-strength")`.
+
+    ```{r label = "F_to_electron_at_min_E"}
+    F_to_electron_at_min_E <- calculate_force_through_electric_field_strength(E = E_min, Q = -e)
+    
+    ```
+    
+    Minimaalse elektrivälja tugevusega punktis paiknevale elektronile mõjus jõud $\qty{`r as.character(signif(F_to_electron_at_min_E, digits = 3))`}{\N}$.
+
+27. Lasen arvutada maksimaalse elektrivälja tugevusega punktis paiknevale elektronile mõjuva jõu kasutades vastavat valemit \@ref(eq:force-through-electric-field-strength) leheküljel `r render_pageref(reference = "eq:force-through-electric-field-strength")`.
+
+    ```{r label = "F_to_electron_at_max_E"}
+    Q_electron = -e
+    F_to_electron_at_max_E <- calculate_force_through_electric_field_strength(E = E_max, Q = Q_electron)
+    
+    ```
+    
+    Maksimaalse elektrivälja tugevusega punktis paiknevale elektronile mõjus jõud $\qty{`r as.character(signif(F_to_electron_at_max_E, digits = 3))`}{\N}$.
+
+28. Lasen arvutada minimaalse elektrivälja tugevusega punktis paiknevale ühekulonilisele laengule mõjuva jõu kasutades vastavat valemit \@ref(eq:force-through-electric-field-strength) leheküljel `r render_pageref(reference = "eq:force-through-electric-field-strength")`.
+
+    ```{r label = "F_to_1Ccharge_at_min_E"}
+    Q = 1
+    F_to_1Ccharge_at_min_E <- calculate_force_through_electric_field_strength(E = E_min, Q = Q)
+    
+    ```
+    
+    Minimaalse elektrivälja tugevusega punktis paiknevale ühekulonilisele laengule mõjus jõud $\qty{`r as.character(signif(F_to_1Ccharge_at_min_E, digits = 3))`}{\N}$.
+
+29. Lasen arvutada maksimaalse elektrivälja tugevusega punktis paiknevale ühekulonilisele mõjuva jõu kasutades vastavat valemit \@ref(eq:force-through-electric-field-strength) leheküljel `r render_pageref(reference = "eq:force-through-electric-field-strength")`.
+
+    ```{r label = "F_to_1Ccharge_at_max_E"}
+    F_to_1Ccharge_at_max_E <- calculate_force_through_electric_field_strength(E = E_max, Q = Q)
+    
+    ```
+    
+    Maksimaalse elektrivälja tugevusega punktis paiknevale ühekulonilisele laengule mõjus jõud $\qty{`r as.character(signif(F_to_1Ccharge_at_max_E, digits = 3))`}{\N}$.
+
+30. Lasen arvutada plusselektroodilt miinuselektroodile elektroni nihutamiseks vajaliku töö kasutades vastavat valemit \@ref(eq:work-through-U) leheküljel `r render_pageref(reference = "eq:work-through-U")`.
+
+    ```{r label = "work_on_electron"}
+    V_at_plus <- 10
+    V_at_minus <- 0
+    work_on_electron <- calculate_work_through_U(V_2 = V_at_minus, V_1 = V_at_plus, Q = Q_electron)
+    
+    ```
+    
+    Plusselektroodilt miinuselektroodile elektroni nihutamiseks vajalik töö oli $\qty{`r as.character(signif(work_on_electron, digits = 3))`}{\J}$.
+
+31. Lasen arvutada plusselektroodilt miinuselektroodile ühekulonise laengu nihutamiseks vajaliku töö kasutades vastavat valemit \@ref(eq:work-through-U) leheküljel `r render_pageref(reference = "eq:work-through-U")`.
+
+    ```{r label = "work_on_1Ccharge"}
+    work_on_1Ccharge <- calculate_work_through_U(V_2 = V_at_minus, V_1 = V_at_plus, Q = Q)
+    
+    ```
+    
+    Plusselektroodilt miinuselektroodile ühekulonise laengu nihutamiseks vajalik töö oli $\qty{`r as.character(signif(work_on_1Ccharge, digits = 3))`}{\J}$.
+

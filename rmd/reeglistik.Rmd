@@ -1,0 +1,507 @@
+# Reeglistik
+
+## Aeg
+
+```{r label = "delta-nu-cs"}
+delta_nu_cs <- 9192631770
+
+```
+
+$\ce{^133Cs}$ aatomi häirimatu põhioleku hüperpeensiirdesageduse fikseeritud arvväärtus:
+
+```{=tex}
+\begin{align}
+\Delta(\nu_\text{Cs}) = 9 192 631 770 \frac{1}{\mathrm{s}}
+(\#eq:delta-nu-cs)
+\end{align}
+
+```
+
+[@bureau_1974_the(lk 130)].
+
+Avaldan avaldisest \@ref(eq:delta-nu-cs) sekundi:
+
+```{=tex}
+\begin{align}
+\mathrm{s} = \frac{9 192 631 770}{\Delta(\nu_\text{Cs})}
+(\#eq:second)
+\end{align}
+
+```
+
+Aja mõõtühik Système Internationale's on sekund.
+
+sekund
+: kestus 9 192 631 770 kiirgusperioodi, mis vastab $\ce{^133Cs}$ aatomi häirimatu põhiseisundi kahe ülipeene taseme vahelisele üleminekule
+
+## Vahemaa
+
+Valguse kiirus vaakumis:
+
+```{r label = "speed-of-light"}
+speed_of_light_in_vacuum <- 299792458
+delta_nu_cs_over_speed_of_light_in_vacuum_over <- delta_nu_cs / speed_of_light_in_vacuum
+reciprocal_of_speed_of_light_in_vacuum <- 1 / speed_of_light_in_vacuum
+
+```
+
+```{=tex}
+\begin{align}
+c = \qty{`r as.character(speed_of_light_in_vacuum)`}{\m\per\s}
+(\#eq:speed-of-light-in-vacuum)
+\end{align}
+
+```
+
+[@bureau_1974_the(lk 127)].
+
+Avaldan valguskiiruse vaakumis valemist \@ref(eq:speed-of-light-in-vacuum) leheküljel `r render_pageref(reference = "eq:speed-of-light-in-vacuum")` meetri ning asendan sekundi avaldisest \@ref(eq:second):
+
+```{=tex}
+\begin{align}
+\mathrm{m} = \frac{c \mathrm{s}}{`r speed_of_light_in_vacuum`} = \frac{c \times \frac{9 192 631 770}{\Delta(\nu_\text{Cs})}}{`r speed_of_light_in_vacuum`} = \frac{`r delta_nu_cs_over_speed_of_light_in_vacuum_over` \times c}{\Delta(\nu_\text{Cs})}.
+(\#eq:meter)
+\end{align}
+
+```
+
+Vahemaa mõõtühik Système Internationale's on meeter.
+
+meeter
+: vahemaa, mille valgus läbib vaakumis `r reciprocal_of_speed_of_light_in_vacuum` sekundi kestel
+
+Asukoha vektor
+
+```{=tex}
+\begin{align}
+\vec{r} := x \cdot \vec{i} + y \cdot \vec{j} + z \cdot \vec{k},
+(\#eq:r)
+\end{align}
+```
+
+kus $x$, $y$ ja $z$ on Descartes'i ruumi koordinaadid [@haynes_2014_crc(lk 2-1)]. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{L},
+(\#eq:dimensional-analysis-for-r)
+\end{align}
+```
+
+mistõttu ühik on $\unit{\m}$.
+
+## Kiirus
+
+kiirus
+: vahemaa muutumise määr ajas [@haynes_2014_crc(lk 2-67)]
+
+Kiiruse vektor:
+
+```{=tex}
+\begin{align}
+\vec{v} := \frac{\mathrm{d}(\vec{r})}{\mathrm{d}(t)},
+(\#eq:v)
+\end{align}
+```
+
+kus $\vec{r}$ on asukoha vektor ja *t* on kestus [@haynes_2014_crc(lk 2-1)]. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L}{T}},
+(\#eq:dimensional-analysis-for-v)
+\end{align}
+```
+
+mistõttu ühik on $\unit{\m\per\s}$.
+
+## Kiirendus
+
+kiirendus
+: kiiruse muutumise kiirus aja suhtes [@haynes_2014_crc(lk 2-44)]
+
+Kiirenduse vektor:
+
+```{=tex}
+\begin{align}
+\vec{a} := \frac{\mathrm{d}(\vec{v})}{\mathrm{d}(t)},
+(\#eq:a)
+\end{align}
+```
+
+kus $\vec{v}$ on kiiruse vektor ja *t* on kestus [@haynes_2014_crc(lk 2-2)]. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L}{T}}{T} = \frac{L}{T^2}},
+(\#eq:dimensional-analysis-for-a)
+\end{align}
+```
+
+mistõttu ühik on $\unit{\m\per\s\squared}$.
+
+## Mass
+
+mass
+: aine kogus [@haynes_2014_crc(lk 2-58)]
+
+mass
+: vastupidavus kiirendusele
+
+Plancki konstant:
+
+```{r label = "planck-constant"}
+h <- 6.62607015e-34
+scalar_of_kg <- delta_nu_cs / h / delta_nu_cs_over_speed_of_light_in_vacuum_over^2
+
+```
+
+```{=tex}
+\begin{align}
+h = 6,626 070 15 × 10^{-34} \mathrm{\frac{kg \times m^2}{s}}
+(\#eq:planck-constant)
+\end{align}
+```
+
+[@bureau_1974_the(lk 131)].
+
+Avaldan avaldisest \@ref(eq:planck-constant) kilogrammi:
+
+```{=tex}
+\begin{align}
+\mathrm{kg} &= \frac{h}{\num{`r as.character(h)`}} \unit{\s\per\meter\squared} = \frac{h}{\num{`r as.character(h)`}} \times \frac{\frac{9 192 631 770}{\Delta(\nu_\text{Cs})}}{(\frac{`r delta_nu_cs_over_speed_of_light_in_vacuum_over` \times c}{\Delta(\nu_\text{Cs})})^2} \\
+&= `r scalar_of_kg` \times \frac{h \times \Delta(\nu_\text{Cs})}{c^2}.
+(\#eq:kilogram)
+\end{align}
+```
+
+## Jõud
+
+```{=tex}
+\begin{align}
+\vec{F} = m \cdot \vec{a},
+(\#eq:force)
+\end{align}
+```
+
+kus *m* on mass ja $\vec{a}$ on kiirenduse vektor [@haynes_2014_crc(lk 2-2)]. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{M \cdot \frac{L}{T^2} = \frac{L \cdot M}{T^2}},
+(\#eq:dimensional-analysis-for-force)
+\end{align}
+```
+
+mistõttu ühik on $\unit{\m\kg\per\s\squared}$ või lühemalt $\unit{\N}$.
+
+## Töö
+
+Töö valem on \@ref(eq:W) leheküljel `r render_pageref(reference = "eq:W")` [@haynes_2014_crc(lk 2-2)].
+
+```{=latex}
+\begin{align}
+W := \int{\vec{F}} \cdot \mathrm{d}(s).(\#eq:W) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs on esitatud avaldisena \@ref(eq:dimensional-analysis-of-W) leheküljel `r render_pageref(reference = "eq:dimensional-analysis-of-W")`.
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L \cdot M}{T^2} \cdot L = \frac{L^2 \cdot M}{T^2}}.
+(\#eq:dimensional-analysis-of-W)
+\end{align}
+```
+
+Seetõttu ühik on $\unit{\m\squared\kg\per\second\squared}$ või lühemalt $\unit{\m\N}$ või kõige lühemalt $\unit{\J}$.
+
+## Elektrivool
+
+Elementaarlaeng on esitatud avaldises \@ref(eq:elementary-charge) leheküljel `r render_pageref(reference = "eq:elementary-charge")` [@bureau_1974_the(lk 134)].
+
+```{r label = "elementary-charge"}
+e <- 1.602176634e-19
+A <- 1 / (e * delta_nu_cs)
+
+```
+
+```{=tex}
+\begin{align}
+e = \qty{`r as.character(e)`}{\coulomb} = \qty{`r as.character(e)`}{\A\s}.
+(\#eq:elementary-charge)
+\end{align}
+
+```
+
+Elektrilaengu dimensionaalanalüüs on esitatud avaldisena \@ref(eq:dimensional-analysis-of-electric-charge) leheküljel `r render_pageref(reference = "eq:dimensional-analysis-of-electric-charge")`.
+
+```{=tex}
+\begin{align}
+\mathrm{I \cdot T}.
+(\#eq:dimensional-analysis-of-electric-charge)
+\end{align}
+
+```
+
+Avaldan avaldisest \@ref(eq:elementary-charge) leheküljel `r render_pageref(reference = "eq:elementary-charge")` ampri ja kajastan tulemust avaldises \@ref(eq:ampere) leheküljel `r render_pageref(reference = "eq:ampere")`.
+
+```{=tex}
+\begin{align}
+\unit{A} &= \frac{e}{\qty{`r as.character(e)`}{\s}} = \frac{e}{\num{`r as.character(e)`} \times \frac{9 192 631 770}{\Delta(\nu_\text{Cs})}}\\
+&= \num{`r as.character(A)`} \times e \times \Delta(\nu_\text{Cs}).
+(\#eq:ampere)
+\end{align}
+
+```
+
+Elektrivoolu valem on \@ref(eq:I) leheküljel `r render_pageref(reference = "eq:I")` ja selles $Q$ on elektrilaeng.
+
+```{=latex}
+\begin{align}
+I := \frac{\mathrm{d}(Q)}{\mathrm{d}(t)},(\#eq:I) 
+\end{align}
+
+```
+
+[@haynes_2014_crc(lk 2-3)]. Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{I \cdot T}{T} = I},
+(\#eq:dimensional-analysis-for-I)
+\end{align}
+```
+
+mistõttu ühik on $\unit{A}$.
+
+## Elektromotoorjõud
+
+elektromotoorjõud
+: allikast tarnitud energia jagatud läbi allika transporditava laenguga
+
+[@haynes_2014_crc(lk 2-52)]
+
+Elektromotoorjõud on esitatud avaldisena \@ref(eq:emf) leheküljel `r render_pageref(reference = "eq:emf")` ning selles *Q* on elektrilaeng [@haynes_2014_crc(lk 2-2)] ja $s$ on tee pikkus [@haynes_2014_crc(lk 2-1)] töö valemist \@ref(eq:W) leheküljel `r render_pageref(reference = "eq:W")`.
+
+```{=latex}
+\begin{align}
+E := \frac{W}{Q} = \int{\frac{\vec{F}}{Q}} \cdot \mathrm{d}(s).(\#eq:emf) 
+\end{align}
+
+```
+
+Elektromotoorjõu dimensionaalanalüüs on esitatud avaldisena \@ref(eq:dimensional-analysis-of-emf) leheküljel `r render_pageref(reference = "eq:dimensional-analysis-of-emf")` [@haynes_2014_crc(lk 2-49), @newell_sp(lk 31)].
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L \cdot M}{T^2}}{I \cdot T} \cdot L = \frac{L^2 \cdot M}{I \cdot T^3}}
+(\#eq:dimensional-analysis-of-emf)
+\end{align}
+
+```
+
+Seetõttu ühik on $\unit{\m\squared\kg\per\A\per\second\cubed}$ või lihtsamalt $\unit{\m\squared\kg\per\C\per\second\squared}$ või lühemalt $\unit{\m\N\per\C}$ või veel lühemalt $\unit{\J\per\C}$ või kõige lühemalt $\unit{\V}$ [@haynes_2014_crc(lk 2-2)].
+
+Avaldan valemist \@ref(eq:emf) jõu ja loon avaldise \@ref(eq:F-via-E-Q-s) leheküljel `r render_pageref(reference = "eq:F-via-E-Q-s")`.
+
+```{=latex}
+\begin{align}
+\vec{F} := \frac{E \cdot Q}{s}.(\#eq:F-via-E-Q-s)
+\end{align}
+
+```
+
+Dimensionaalanalüüs on esitatud avaldisena \@ref(eq:dimensional-analysis-of-F-via-E-Q-s) leheküljel `r render_pageref(reference = "eq:dimensional-analysis-of-F-via-E-Q-s")`.
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{I \cdot T^3} \cdot I \cdot T}{L} = \frac{L^2 \cdot M \cdot I \cdot T}{I \cdot T^3 \cdot L} = \frac{L \cdot M}{T^2}}.
+(\#eq:dimensional-analysis-of-F-via-E-Q-s)
+\end{align}
+```
+
+Seetõttu ühik on $\unit{\m\kg\per\second\squared}$ ehk lihtsamalt $\unit{\N}$.
+
+Asendan valemisse \@ref(eq:W) jõu valemist \@ref(eq:F-via-E-Q-s) leheküljel`r render_pageref("eq:F-via-E-Q-s")`:
+
+```{=latex}
+\begin{align}
+W := \int{\overrightarrow{\frac{E \cdot Q}{\mathrm{d}(s)}}} \cdot \mathrm{d}(s) = E \cdot Q.(\#eq:W-via-E-Q) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs:
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L^2 \cdot M}{I \cdot T^3} \cdot I \cdot T = \frac{L^2 \cdot M}{T^2}},
+(\#eq:dimensional-analysis-for-W-via-E-Q)
+\end{align}
+```
+
+millest johtuvalt on ühik $\unit{\m\squared\kg\per\s\squared}$ ehk lühemalt $\unit{\m\N}$ ehk kõige lühemalt $\unit{\J}$.
+
+## Elektriline potentsiaal
+
+Elektrilise potentsiaali definitsioon on esitatud valemina \@ref(eq:V) leheküljel `r render_pageref(reference = "eq:V")`, milles $W$ on töö [@haynes_2014_crc(lk 2-2)].
+
+```{=latex}
+\begin{align}
+V := \frac{\mathrm{d}(W)}{\mathrm{d}(Q)}.(\#eq:V) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs on esitatud avaldisena \@ref(eq:dimensional-analysis-of-V) leheküljel `r render_pageref(reference = "eq:dimensional-analysis-of-V")`.
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L^2 \cdot M}{T^2}}{I \cdot T} = \frac{L^2 \cdot M}{T^2 \cdot I \cdot T} = \frac{L^2 \cdot M}{T^3 \cdot I}},
+(\#eq:dimensional-analysis-of-V)
+\end{align}
+
+```
+
+Seetõttu ühik on $\unit{\m\squared\kg\per\A\per\s\cubed}$ või kõige lühemalt $\unit{\V}$.
+
+## Elektripotentsiaalide erinevus
+
+Elektripotentsiaalide erinevus on ühtlasi pingelang ning selle definitsioon on esitatud valemina \@ref(eq:U) leheküljel `r render_pageref(reference = "eq:U")` ning selles $V_1$ ja $V_2$ on elektrilised potentsiaalid [@haynes_2014_crc(lk 2-2)].
+
+```{=latex}
+\begin{align}
+U = V_2 - V_1,(\#eq:U) 
+\end{align}
+
+```
+
+Dimensionaalanalüüs on esitatud avaldisena \@ref(eq:dimensional-analysis-of-U) leheküljel `r render_pageref(reference = "eq:dimensional-analysis-of-U")`.
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{L^2 \cdot M}{T^3 \cdot I}},
+(\#eq:dimensional-analysis-of-U)
+\end{align}
+
+```
+
+Seetõttu ühik on $\unit{\m\squared\kg\per\A\per\s\cubed}$ või kõige lühemalt $\unit{\V}$.
+
+Töö arvutamise valem laengu liigutamiseks väiksema elektrilise potentsiaaliga punktist suurema potentsiaaliga punkti panen töö valemisse \@ref(eq:W-via-E-Q) leheküljel `r render_pageref(reference = "eq:W-via-E-Q")` elektromotoorjõu asemele elektriliste potentsiaalide erinevuse valemist \@ref(eq:U) leheküljel `r render_pageref(reference = "eq:U")` luues töö valemi \@ref(eq:work-through-U) leheküljel `r render_pageref(reference = "eq:work-through-U")`.
+
+```{r label = "calculate_work_through_U"}
+#' This function calculates the work done for moving a charge from a lower electric potential point to a higher electric potential one.
+#' 
+#' @param V_2 the higher electric potential
+#' @param V_1 the lower electric potential
+#' @param Q the charge
+#' 
+#' @returns the electric field strength
+calculate_work_through_U <- function(V_2, V_1, Q) {
+  return((V_2 - V_1) / Q)
+}
+
+```
+
+```{=tex}
+\begin{align}
+W = U \cdot Q.
+(\#eq:work-through-U)
+\end{align}
+
+```
+
+## Elektrivälja tugevus
+
+Elektrivälja tugevuse arvutamise eeskiri on esitatud avaldisena \@ref(eq:electric-field-strength) leheküljel `r render_pageref(reference = "eq:electric-field-strength")`.
+
+```{=tex}
+\begin{align}
+\vec{E} = \frac{\vec{F}}{Q}.
+(\#eq:electric-field-strength)
+\end{align}
+
+```
+
+Selles valemis $\vec{F}$ on jõud ja $Q$ on elektrilaeng. Dimensionaalanalüüs on esitatud avaldisena \@ref(eq:dimensional-analysis-for-electric-field-strength) `r render_pageref(reference = "eq:dimensional-analysis-for-electric-field-strength")`.
+
+```{=tex}
+\begin{align}
+\mathrm{\frac{\frac{L \times M}{T^2}}{I \times T} = \frac{L \times M}{I \times T^3}}.
+(\#eq:dimensional-analysis-for-electric-field-strength)
+\end{align}
+```
+
+Sellest johtuvalt on ühik $\unit{\m\kg\per\A\per\s\cubed}$ ehk lihtsamini $\unit{\N\per\C}$.
+
+Asendan töö valemist \@ref(eq:W) leheküljel `r render_pageref(reference = "eq:W")` jõu ja avaldan elektrivälja tugevuse töö kaudu, mis on esitatud avaldisena \@ref(eq:electric-field-strength-through-work) leheküljel `r render_pageref(reference = "eq:electric-field-strength-through-work")`.
+
+```{=tex}
+\begin{align}
+\vec{E} = \frac{W}{Q \cdot s}.
+(\#eq:electric-field-strength-through-work)
+\end{align}
+
+```
+
+Asendan elektromotoorjõu valemist \@ref(eq:emf) leheküljel `r render_pageref(reference = "eq:emf")` elektromotoorjõu ja saan avaldise \@ref(eq:electric-field-strength-through-emf) leheküljel `r render_pageref(reference = "eq:electric-field-strength-through-emf")`.
+
+```{=tex}
+\begin{align}
+\vec{E} = \frac{E}{s}.
+(\#eq:electric-field-strength-through-emf)
+\end{align}
+
+```
+
+Näeme, et elektrivälja tugevuse ühik võib olla ka $\unit{\V\per\m}$.
+
+Samamoodi saan elektromotoorjõu asemel kasutada viimases valemis elektripotentsiaalide erinevust valemist \@ref(eq:U) leheküljel `r render_pageref(reference = "eq:U")` ning tulemuseks on avaldis \@ref(eq:electric-field-strength-through-U) leheküljel `r render_pageref(reference = "eq:electric-field-strength-through-U")`.
+
+```{r label = "calculate-electric-field-strength-through-U"}
+#' This function calculates the electric field strength between two electric potential lines.
+#' 
+#' @param V_2 the higher electric potential
+#' @param V_1 the lower electric potential
+#' @param s the distance between the equipotential lines
+#' 
+#' @returns the electric field strength
+calculate_electric_field_strength_through_U <- function(V_2, V_1, s) {
+  return((V_2 - V_1) / s)
+}
+
+```
+
+```{=tex}
+\begin{align}
+\vec{E} = \frac{V_2 - V_1}{s}.
+(\#eq:electric-field-strength-through-U)
+\end{align}
+
+```
+
+Lasen avaldada elektrivälja tugevuse põhivalemist \@ref(eq:electric-field-strength) leheküljel `r render_pageref(reference = "eq:electric-field-strength")` jõu avaldisena \@ref(eq:force-through-electric-field-strength) leheküljel `r render_pageref(reference = "eq:force-through-electric-field-strength")`.
+
+```{r label = "calculate-force-through-electric-field-strength"}
+#' This function calculates the force through electric field strength.
+#' 
+#' @param E the electric field strength
+#' @param Q the electric charge
+#' 
+#' @returns the electric field strength
+calculate_force_through_electric_field_strength <- function(E, Q) {
+  return(E * Q)
+}
+
+```
+
+```{=tex}
+\begin{align}
+\vec{F} = \vec{E} \cdot Q.
+(\#eq:force-through-electric-field-strength)
+\end{align}
+
+```

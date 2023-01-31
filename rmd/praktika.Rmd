@@ -1,0 +1,7 @@
+# Praktika
+
+Ekvipotentsiaaljooni saab praktiliselt kindlaks teha, kui tekitada mingisse nõusse mingi elektrit juhtiv vedelik, nõu vastasservadesse elektroodid, nii et need oleksid vedeliku kaudu ühendatud, ühendada üks elektrood voltmeetri ja sondiga ning lasta vool läbi sondi ja vedeliku elektroodini. Tuleb asetada sond vedelikku ja vaadata, milline on voltmeetri näit. Sondi asukoht tuleb märgistada. Sama voltmeetri näidu korral tuleb leida mingi muu asukoht sondile ja ka see asukoht märgistada. Niimoodi tuleb võimalikult palju sama pingega asukohti märgistada, misjärel saab neid ühendades ekvipotentsiaaljoone.
+
+Kui sellist eksperimenti teha, siis tuleb olla tähelepanelik, et mitte keegi ei läheks eksperimendiagregaadi ega selle aluse vastu, sest nii võivad elektroodid paigast nihkuda ja see tähendaks, et järgmine sondi asukoht sama pingega on hoopis vales kohas võrreldes elektroodi esialgse asukohaga.
+
+Kui elektroodid on mõlemad vertikaalselt otse, siis kujuneksid samapinge jooned sümmeetrilised. Kui üks elektrood on viltu, ei pruugi samapinge jooned sümmeetrilised olla.

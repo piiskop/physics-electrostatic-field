@@ -38,9 +38,9 @@ function setTargets() {
   document.getElementById("book-source").target = "GitHub";
   
   let div = document.getElementById("main-nav").getElementsByTagName("nav")[0].getElementsByClassName("book-extra")[0];
-  createLink(div, "book-print", "manual-for-rstudio.pdf", "View printable book");
-  let nameOfPresentation = "presentation";
-  createLink(div, "presentation-" + nameOfPresentation, nameOfPresentation + ".html", "Presentation");
+  createLink(div, "book-print", "physics-electrostatic-field.pdf", "trükiteisend");
+  // let nameOfPresentation = "presentation";
+  // createLink(div, "presentation-" + nameOfPresentation, nameOfPresentation + ".html", "Presentation");
 }
 
 window.onload = function () {
